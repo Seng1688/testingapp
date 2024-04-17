@@ -1,0 +1,8 @@
+.cards-container {
+  display: flex;
+  justify-content: space-between; /* Distributes the cards along the main axis with equal space between them */
+}
+
+.card {
+  width: calc(50% - 16px); /* Set the width of each card to half of the container width, minus padding */
+}
