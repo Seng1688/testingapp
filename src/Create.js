@@ -4,6 +4,11 @@ import { useEffect } from "react"; // Importing useEffect hook from React
 import { TextField } from "@material-ui/core"; // Importing TextField component from Material-UI
 import { Card, CardContent, Typography, CardHeader } from "@material-ui/core";
 import "./styles.css"; // Import your CSS file for styling
+import Accordion from '@material-ui/core/Accordion';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+// import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+// import Button from '@mui/material/Button';
 
 const Create = () => {
   const [textFieldValue, setTextFieldValue] = useState(""); // State to manage the value of the text field
@@ -98,7 +103,47 @@ const Create = () => {
 
         </Card>
       </div>
+
+      <Accordion>
+        <AccordionSummary
+          aria-controls="panel1-content"
+          id="panel1-header"
+        >
+          Accordion 1
+        </AccordionSummary>
+        <AccordionDetails>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          malesuada lacus ex, sit amet blandit leo lobortis eget.
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary
+          aria-controls="panel2-content"
+          id="panel2-header"
+        >
+          Accordion 2
+        </AccordionSummary>
+        <AccordionDetails>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          malesuada lacus ex, sit amet blandit leo lobortis eget.
+        </AccordionDetails>
+      </Accordion>
+      <Accordion defaultExpanded>
+        <AccordionSummary
+          aria-controls="panel3-content"
+          id="panel3-header"
+        >
+          Accordion Actions
+        </AccordionSummary>
+        <AccordionDetails>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          malesuada lacus ex, sit amet blandit leo lobortis eget.
+        </AccordionDetails>
+
+      </Accordion>
+
     </div>
+    
   );
 };
 export default Create;
