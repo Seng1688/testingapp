@@ -15,14 +15,23 @@ const Create = () => {
   const [isTrigger, setIsTrigger] = useState(false); // State to manage the value of the text field
 
   useEffect(() => {
-    const mousetrap = new Mousetrap(); // Creating a new Mousetrap instance
-    const textAreaElem = document.querySelector("#standard-basic");
-    const save = async e => {
-      e.preventDefault(); // Preventing the default behavior of the event
-      setTextFieldValue("aaa"); // Update the state with the new value
-    };
+    
 
-    Mousetrap(textAreaElem).bind("a b", save); // Binding the Mousetrap instance to 'ctrl+s' key and the save function
+    const mousetrap = new Mousetrap(); // Creating a new Mousetrap instance
+
+  
+    const textAreaElem = document.querySelector("#standard-basic");
+    const save = async (e) => {
+      e.preventDefault(); // Preventing the default behavior of the event
+        setTextFieldValue("aaa"); // Update the state with the new value
+    };
+    const save2 = async (e) => {
+      e.preventDefault(); // Preventing the default behavior of the event
+        setTextFieldValue("bbb"); // Update the state with the new value
+    };
+    Mousetrap(textAreaElem).bind("a b c a b f g", save2); // Binding the Mousetrap instance to 'ctrl+s' key and the save function
+    Mousetrap(textAreaElem).bind("a T", save); // Binding the Mousetrap instance to 'ctrl+s' key and the save function
+
 
     // Returning a cleanup function to unbind the Mousetrap when the component unmounts
     return () => {
